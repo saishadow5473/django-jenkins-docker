@@ -11,7 +11,7 @@ pipeline {
         stage("Build"){
             steps {
                 echo "Building the image"
-                sh "docker build -t django-app ."
+                sh "docker build -t django-app:latest ."
             }
         }
         stage("Push to Docker Hub"){
