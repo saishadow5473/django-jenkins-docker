@@ -27,7 +27,8 @@ pipeline {
         stage("Deploy"){
             steps {
                 echo "Deploying the container"
-                sh "docker-compose down && docker-compose up -d"
+                docker run -d -p 8000:8000 --name container1 saishadow5473/django-app:latest
+                // sh "docker-compose down && docker-compose up -d"
                 
             }
         }
