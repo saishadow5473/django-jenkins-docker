@@ -5,7 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  dockerImageName: 'saishadow5473/Django-image'  # Replace with your Docker Hub username and desired image name
+  dockerImageName: 'saishadow5473/django-image'  # Replace with your Docker Hub username and desired image name
   dockerRegistryServiceConnection: 'MyDockerHub'  # Replace with your Docker registry service connection name
   awsVmIp: '15.206.116.170'  # Replace with your AWS VM IP
   awsVmUser: 'ubuntu'  # Replace with your AWS VM username
@@ -50,7 +50,7 @@ stages:
         # scriptLocation: 'inline'
         inline: |
           # Check if container exists before attempting to stop and remove it
-          if docker ps -a --format '{{.Names}}' | grep -q Django-container; then
+          if docker ps -a --format '{{.Names}}' | grep -q django-container; then
             docker stop my-container || true
             docker rm my-container || true
           fi
@@ -59,4 +59,4 @@ stages:
           docker pull $(dockerImageName):latest || true
 
           # Run your docker run command to start the container
-          docker run -d --name Django-container -p 80:80 $(dockerImageName):latest
+          docker run -d --name django-container -p 80:80 $(dockerImageName):latest
