@@ -51,8 +51,8 @@ stages:
         inline: |
           # Check if container exists before attempting to stop and remove it
           if docker ps -a --format '{{.Names}}' | grep -q django-container; then
-            docker stop my-container || true
-            docker rm my-container || true
+            docker stop django-container || true
+            docker rm django-container || true
           fi
 
           # Retry pulling the Docker image in case of failure
