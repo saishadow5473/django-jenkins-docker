@@ -59,4 +59,4 @@ stages:
           docker pull $(dockerImageName):latest || true
 
           # Run your docker run command to start the container
-          docker run -d --name django-container -p 80:80 $(dockerImageName):latest
+          docker run -d --name django-container -p 8000:8000 $(dockerImageName):latest
