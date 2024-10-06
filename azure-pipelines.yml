@@ -7,7 +7,7 @@ pool:
 variables:
   dockerImageName: 'saishadow5473/django-image'  # Replace with your Docker Hub username and desired image name
   dockerRegistryServiceConnection: 'MyDockerHub'  # Replace with your Docker registry service connection name
-  awsVmIp: '15.206.116.170'  # Replace with your AWS VM IP
+  awsVmIp: '54.209.229.33'  # Replace with your AWS VM IP
   awsVmUser: 'ubuntu'  # Replace with your AWS VM username
 
 stages:
